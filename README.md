@@ -20,7 +20,7 @@ Game Engine: push_game.dart
 State Management: stage_state.dart
 
 🎮 Controls
-Direction	Key
+Direction	Key----
 ↑ Up	W/Z
 ← Left	A/Q
 → Right	D
