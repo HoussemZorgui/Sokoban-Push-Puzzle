@@ -16,14 +16,16 @@ class Crate extends SpriteAnimationComponent with HasGameRef {
 
   Crate()
       : super(
-    size: Vector2.all(oneBlockSize),
-  );
+          size: Vector2.all(oneBlockSize),
+        );
+
+  OpacityEffect? get customOpacityEffect => null;
 
   @override
   Future<void> onLoad() async {
     super.onLoad();
     await _loadAnimations().then((_) => {animation = _noAnimation});
-    _goalEffect = customOpacityEffect;
+    _goalEffect = customOpacityEffect!;
   }
 
   Future<void> _loadAnimations() async {
@@ -32,10 +34,8 @@ class Crate extends SpriteAnimationComponent with HasGameRef {
       srcSize: Vector2.all(oneBlockSize),
     );
 
-    _noAnimation =
-        spriteSheet.createAnimation(row: 0, stepTime: 1, to: 1);
-    _goalAnimation =
-        spriteSheet.createAnimation(row: 0, stepTime: 0.4, to: 2);
+    _noAnimation = spriteSheet.createAnimation(row: 0, stepTime: 1, to: 1);
+    _goalAnimation = spriteSheet.createAnimation(row: 0, stepTime: 0.4, to: 2);
   }
 
   void setPosition(Vector2 vec) {
