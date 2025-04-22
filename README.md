@@ -9,7 +9,7 @@
 
 ## 🚀 Getting Started
 
-```bash
+
 flutter run
 🏗 Technical Architecture
 Levels: Configured via stage_master_data.dart
